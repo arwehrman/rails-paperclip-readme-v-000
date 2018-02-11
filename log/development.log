@@ -636,3 +636,22 @@ Command :: convert '/tmp/1d8985608b4bda2bf3c0534cddc5073520180211-1536-bt7uxu.jp
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (0.4ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2018-02-11 18:32:25.807578"], ["avatar_file_name", "mr-meeseeks.jpg"], ["updated_at", "2018-02-11 18:32:25.979780"], ["id", 5]]
   [1m[35m (4.8ms)[0m  commit transaction
+
+
+Started GET "/authors/5" for 98.115.232.231 at 2018-02-11 18:32:35 +0000
+Cannot render console from 98.115.232.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 5]]
+  Rendered authors/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 333ms (Views: 300.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/authors" for 98.115.232.231 at 2018-02-11 18:32:41 +0000
+Cannot render console from 98.115.232.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.3ms)
