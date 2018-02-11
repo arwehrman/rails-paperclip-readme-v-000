@@ -626,3 +626,13 @@ ActionController::RoutingError (No route matches [GET] "/system/authors/avatars/
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.6ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE (avatar_file_name IS NOT NULL)  ORDER BY "authors"."id" ASC LIMIT 1000[0m
+[paperclip] Trying to link /tmp/1d8985608b4bda2bf3c0534cddc5073520180211-1536-bt7uxu.jpg to /tmp/1d8985608b4bda2bf3c0534cddc5073520180211-1536-wygokr.jpg
+Command :: file -b --mime '/tmp/1d8985608b4bda2bf3c0534cddc5073520180211-1536-wygokr.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/1d8985608b4bda2bf3c0534cddc5073520180211-1536-bt7uxu.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/1d8985608b4bda2bf3c0534cddc5073520180211-1536-bt7uxu.jpg[0]'
+Command :: convert '/tmp/1d8985608b4bda2bf3c0534cddc5073520180211-1536-bt7uxu.jpg[0]' -auto-orient -resize "100x100>" '/tmp/fb1dc2b2ef57b2c0055a3e47a577efc020180211-1536-cemqtj'
+[paperclip] Trying to link /tmp/fb1dc2b2ef57b2c0055a3e47a577efc020180211-1536-cemqtj to /tmp/d459b5bf083554765385d95baa6fd42b20180211-1536-pzm1bu
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "authors" SET "avatar_updated_at" = ?, "avatar_file_name" = ?, "updated_at" = ? WHERE "authors"."id" = ?[0m  [["avatar_updated_at", "2018-02-11 18:32:25.807578"], ["avatar_file_name", "mr-meeseeks.jpg"], ["updated_at", "2018-02-11 18:32:25.979780"], ["id", 5]]
+  [1m[35m (4.8ms)[0m  commit transaction
